@@ -3,6 +3,16 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@adobe/lit-mobx": "2.0.0",
+    "@hilla/form": "1.2.5",
+    "@hilla/frontend": "1.2.5",
+    "@hilla/generator-typescript-cli": "1.2.5",
+    "@hilla/generator-typescript-core": "1.2.5",
+    "@hilla/generator-typescript-plugin-backbone": "1.2.5",
+    "@hilla/generator-typescript-plugin-barrel": "1.2.5",
+    "@hilla/generator-typescript-plugin-client": "1.2.5",
+    "@hilla/generator-typescript-plugin-model": "1.2.5",
+    "@hilla/generator-typescript-plugin-push": "1.2.5",
+    "@hilla/generator-typescript-utils": "1.2.5",
     "@polymer/iron-icon": "3.0.1",
     "@polymer/iron-iconset-svg": "3.0.1",
     "@polymer/iron-list": "3.1.0",
@@ -118,11 +128,9 @@
     "@vaadin/vertical-layout": "23.2.5",
     "@vaadin/virtual-list": "23.2.5",
     "construct-style-sheets-polyfill": "3.1.0",
-    "date-fns": "2.29.3",
     "line-awesome": "1.3.0",
     "lit": "2.3.0",
-    "mobx": "^6.3.5",
-    "proj4": "2.8.0"
+    "mobx": "^6.3.5"
   },
   "devDependencies": {
     "@rollup/plugin-replace": "3.1.0",
@@ -254,12 +262,33 @@
     "construct-style-sheets-polyfill": "$construct-style-sheets-polyfill",
     "lit": "$lit",
     "@polymer/polymer": "$@polymer/polymer",
-    "date-fns": "$date-fns",
     "@vaadin/multi-select-combo-box": "$@vaadin/multi-select-combo-box",
-    "proj4": "$proj4"
+    "@adobe/lit-mobx": "$@adobe/lit-mobx",
+    "line-awesome": "$line-awesome",
+    "mobx": "$mobx",
+    "@hilla/generator-typescript-plugin-model": "$@hilla/generator-typescript-plugin-model",
+    "@hilla/generator-typescript-plugin-barrel": "$@hilla/generator-typescript-plugin-barrel",
+    "@hilla/generator-typescript-plugin-push": "$@hilla/generator-typescript-plugin-push",
+    "@hilla/generator-typescript-core": "$@hilla/generator-typescript-core",
+    "@hilla/generator-typescript-plugin-client": "$@hilla/generator-typescript-plugin-client",
+    "@hilla/generator-typescript-utils": "$@hilla/generator-typescript-utils",
+    "@hilla/frontend": "$@hilla/frontend",
+    "@hilla/form": "$@hilla/form",
+    "@hilla/generator-typescript-plugin-backbone": "$@hilla/generator-typescript-plugin-backbone",
+    "@hilla/generator-typescript-cli": "$@hilla/generator-typescript-cli"
   },
   "vaadin": {
     "dependencies": {
+      "@hilla/form": "1.2.5",
+      "@hilla/frontend": "1.2.5",
+      "@hilla/generator-typescript-cli": "1.2.5",
+      "@hilla/generator-typescript-core": "1.2.5",
+      "@hilla/generator-typescript-plugin-backbone": "1.2.5",
+      "@hilla/generator-typescript-plugin-barrel": "1.2.5",
+      "@hilla/generator-typescript-plugin-client": "1.2.5",
+      "@hilla/generator-typescript-plugin-model": "1.2.5",
+      "@hilla/generator-typescript-plugin-push": "1.2.5",
+      "@hilla/generator-typescript-utils": "1.2.5",
       "@polymer/iron-icon": "3.0.1",
       "@polymer/iron-iconset-svg": "3.0.1",
       "@polymer/iron-list": "3.1.0",
@@ -374,9 +403,7 @@
       "@vaadin/vertical-layout": "23.2.5",
       "@vaadin/virtual-list": "23.2.5",
       "construct-style-sheets-polyfill": "3.1.0",
-      "date-fns": "2.29.3",
-      "lit": "2.3.0",
-      "proj4": "2.8.0"
+      "lit": "2.3.0"
     },
     "devDependencies": {
       "@rollup/plugin-replace": "3.1.0",
@@ -393,6 +420,6 @@
       "workbox-core": "6.5.0",
       "workbox-precaching": "6.5.0"
     },
-    "hash": "ad1525325239222eff1af11666a26c5ce20e9f76f6dc95665c422954849db005"
+    "hash": "261fb2333fa93ff854a98e2572f500040ad3e5742f558a1651dcc3e688b4aa3f"
   }
 }

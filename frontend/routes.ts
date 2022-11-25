@@ -13,7 +13,7 @@ export const views: ViewRoute[] = [
     path: '',
     component: 'empty-view',
     icon: 'la la-file',
-    title: 'Empty',
+    title: 'Worldchat',
   },
 ];
 export const routes: ViewRoute[] = [...views];

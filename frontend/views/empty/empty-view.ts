@@ -1,15 +1,45 @@
 import { html } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, state } from 'lit/decorators.js';
 import { View } from '../../views/view';
+import '@vaadin/vaadin-messages';
+import '@vaadin/vaadin-text-field';
+import '@vaadin/message-list';
+import Message from 'Frontend/generated/com/example/application/ChatEndpoint/Message';
+import { TextFieldChangeEvent } from '@vaadin/vaadin-text-field';
+import { ChatEndpoint } from 'Frontend/generated/endpoints';
 
 @customElement('empty-view')
 export class EmptyView extends View {
+  @state() messages: Message[] = [];
+  @state() userName = '';
+
+  get formattedMessages() {
+    return this.messages.map(m => ({
+      ...m,
+      time: new Date(m.time).toLocaleTimeString('pt-BR'),
+    }));
+  }
+
   render() {
-    return html`<div>
-      <img style="width: 200px;" src="images/empty-plant.png" />
-      <h2>This place intentionally left empty</h2>
-      <p>It’s a place where you can grow your own UI 🤗</p>
-    </div>`;
+    return html`
+    <vaadin-message-list class="flex-grow" .items=${this.formattedMessages}></vaadin-message-list>
+    <div class="flex p-s gap-s items-baseline">
+      <vaadin-text-field placeholder="Name" @change=${this.userNameChange}></vaadin-text-field>
+      <vaadin-message-input class="flex-grow" @submit=${this.submit}></vaadin-message-input>
+    </div>
+    `;
+  }
+
+  userNameChange(e: TextFieldChangeEvent) {
+    this.userName = e.target.value;
+  }
+
+
+  submit(e: CustomEvent) {
+    ChatEndpoint.send({
+      text: e.detail.value,
+      userName: this.userName,
+    });
   }
 
   connectedCallback() {
@@ -18,11 +48,10 @@ export class EmptyView extends View {
       'flex',
       'flex-col',
       'h-full',
-      'items-center',
-      'justify-center',
-      'p-l',
-      'text-center',
       'box-border'
+    );
+    ChatEndpoint.join().onNext(
+      (message) => (this.messages = [...this.messages, message])
     );
   }
 }
